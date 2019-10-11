@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Add New Article</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<form>
+  <div class="form-group">
+    <label for="exampleInputTitle">Article Title</label>
+    <input type="booktitle" class="form-control" id="exampleInputTitle1" aria-describedby="TitleHelp" placeholder="Title">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputName">Author Name</label>
+    <input type="authorname" class="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Name">
+  </div>
+<!--choose file-->
+	<div class="container mt-3">
+	  <form action="/action_page.php">
+	    <p>Upload Files:</p>
+	    <input type="file" id="myFile" name="filename2">
+
+	    <div class="mt-3">
+	    </div>
+	  </form>
+	</div>
+
+	<script>
+	$(".custom-file-input").on("change", function() {
+	  var fileName = $(this).val().split("\\").pop();
+	  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+	});
+	</script>
+
+<!--dropdown-->
+	<div class="dropdown">
+	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    Pages
+	  </button><br>
+	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+	    <a class="dropdown-item" href="#">Academics</a>
+	    <a class="dropdown-item" href="#">News</a>
+	  </div>
+	</div>
+
+<!--text-->
+<div class="form-group">
+    <label for="text">Article Text</label>
+    <textarea class="form-control" id="text" rows="10"></textarea>
+</div>
+<!--checkbox-->
+<div class="container">
+  <p>Select Tags</p>
+  <form>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="">Python
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="">C++
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="">Java
+    </label>
+		<label class="checkbox-inline">
+      <input type="checkbox" value="">Scala
+    </label>
+		<label class="checkbox-inline">
+      <input type="checkbox" value="">Perl
+    </label>
+</form>
+
+	<form>
+    <label class="radio-inline"><input type="radio" name="optradio" checked>Private</label>
+    <label class="radio-inline"><input type="radio" name="optradio">Public</label>
+</form>
+</div>
+
+
+<div class="form-group">
+	<label for="exampleInputUserInfo">Login to Finish Submitting</label>
+	<input type="username" class="form-control" id="exampleInputUsername" aria-describedby="Username" placeholder="Username">
+	<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+	<label class="checkbox-inline">
+		<input type="checkbox" value="">Remember me
+	</label><br>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</div>
